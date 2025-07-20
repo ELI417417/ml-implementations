@@ -1,52 +1,50 @@
-# ML Implementations
+﻿# ML Implementations
 
-A monorepo of machine learning paper implementations and projects — built from scratch for learning. Each subdirectory is a self-contained project with its own README, source code, and tests.
+Monorepo of machine learning paper implementations and learning projects — built from scratch with PyTorch, tested, documented. Each subdirectory is a self-contained project.
 
-## Projects
+## Paper Reproductions (8 papers)
 
-### Computer Vision
+| Paper | Venue | Directory | Key Components |
+|-------|-------|-----------|----------------|
+| Attention Is All You Need | NeurIPS 2017 | [transformer-from-scratch](transformer-from-scratch/) | Multi-head attention, positional encoding, encoder-decoder |
+| Deep Residual Learning | CVPR 2016 | [resnet-from-scratch](resnet-from-scratch/) | BasicBlock, Bottleneck, ResNet-18/34/50/101/152 |
+| DCGAN | ICLR 2016 | [dcgan-image-generation](dcgan-image-generation/) | Generator, discriminator, 64×64 face generation |
+| Neural Style Transfer | 2015 | [neural-style-transfer](neural-style-transfer/) | VGG19, Gram matrix, L-BFGS optimization |
+| ViT | ICLR 2021 | [vision-transformer-cifar100](vision-transformer-cifar100/) | Patch embedding, self-attention, class token |
+| PointNet | CVPR 2017 | [pointnet-3d-classification](pointnet-3d-classification/) | T-Net, permutation invariance, ModelNet40 |
+| LoRA | ICLR 2022 | [lora-finetuning](lora-finetuning/) | Low-rank adaptation, ablation study, weight merging |
+| CLIP | ICML 2021 | [clip-semantic-search](clip-semantic-search/) | Vision-language embeddings, FAISS indexing |
 
-| Project | Paper | Description |
-|---------|-------|-------------|
-| [dcgan-image-generation](dcgan-image-generation/) | Radford et al., ICLR 2016 | DCGAN for 64×64 face generation |
-| [resnet-from-scratch](resnet-from-scratch/) | He et al., CVPR 2016 | ResNet-18/34/50/101/152 + CIFAR variants |
-| [vision-transformer-cifar100](vision-transformer-cifar100/) | Dosovitskiy et al., ICLR 2021 | ViT trained on CIFAR-100 |
-| [neural-style-transfer](neural-style-transfer/) | Gatys et al., 2015 | Artistic style transfer with VGG19 |
-| [yolo-object-detection](yolo-object-detection/) | Ultralytics YOLOv8 | Object detection web app with ONNX |
-| [mobilenet-ssd-deployment](mobilenet-ssd-deployment/) | Howard et al., CVPR 2018 | Edge-optimized object detection |
-| [realtime-video-analytics](realtime-video-analytics/) | — | Face detection + motion tracking dashboard |
-| [pointnet-3d-classification](pointnet-3d-classification/) | Qi et al., CVPR 2017 | 3D point cloud classification |
+## Application Projects (4)
 
-### NLP & Multimodal
-
-| Project | Paper | Description |
-|---------|-------|-------------|
-| [transformer-from-scratch](transformer-from-scratch/) | Vaswani et al., NeurIPS 2017 | Full Transformer implementation |
-| [lora-finetuning](lora-finetuning/) | Hu et al., ICLR 2022 | LoRA ablation study for LLM fine-tuning |
-| [clip-semantic-search](clip-semantic-search/) | Radford et al., ICML 2021 | CLIP + FAISS image search engine |
-| [stable-diffusion-explorer](stable-diffusion-explorer/) | Rombach et al., CVPR 2022 | Diffusion model with attention visualization |
+| Project | Stack | Directory |
+|---------|-------|-----------|
+| YOLO Object Detection | ONNX Runtime, Flask, OpenCV | [yolo-object-detection](yolo-object-detection/) |
+| MobileNet-SSD Study | PyTorch, ONNX | [mobilenet-ssd-deployment](mobilenet-ssd-deployment/) |
+| Stable Diffusion Explorer | Diffusers, Streamlit | [stable-diffusion-explorer](stable-diffusion-explorer/) |
+| Video Analytics Dashboard | OpenCV, Streamlit, Plotly | [realtime-video-analytics](realtime-video-analytics/) |
 
 ## Structure
 
 ```
 ml-implementations/
-├── dcgan-image-generation/     # 2024-06
-├── transformer-from-scratch/   # 2024-08
-├── vision-transformer-cifar100/# 2024-09
-├── yolo-object-detection/      # 2024-10
-├── mobilenet-ssd-deployment/   # 2024-11
-├── clip-semantic-search/       # 2024-12
-├── neural-style-transfer/      # 2025-01
-├── resnet-from-scratch/        # 2025-03
-├── lora-finetuning/            # 2025-04
-├── stable-diffusion-explorer/  # 2025-05
-├── pointnet-3d-classification/ # 2025-06
-└── realtime-video-analytics/   # 2025-07
+├── dcgan-image-generation/      # 2024-06
+├── transformer-from-scratch/    # 2024-08
+├── vision-transformer-cifar100/ # 2024-09
+├── yolo-object-detection/       # 2024-10
+├── mobilenet-ssd-deployment/    # 2024-11
+├── clip-semantic-search/        # 2024-12
+├── neural-style-transfer/       # 2025-01
+├── resnet-from-scratch/         # 2025-03
+├── lora-finetuning/             # 2025-04
+├── stable-diffusion-explorer/   # 2025-05
+├── pointnet-3d-classification/  # 2025-06
+└── realtime-video-analytics/    # 2025-07
 ```
 
-## Running Tests
+## Running
 
-Each project has its own test suite. Run from the project directory:
+Each project is self-contained:
 
 ```bash
 cd <project-dir>
@@ -56,4 +54,4 @@ python -m pytest tests/ -v
 
 ## Approach
 
-Every implementation in this repo is written from scratch for learning — I believe you don't understand something until you've built it yourself. These are not production systems; they are paper reproductions and learning projects.
+Everything here is built from scratch for learning — I believe understanding comes from implementing. These are paper reproductions and learning projects, not production systems.
