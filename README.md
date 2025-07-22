@@ -55,3 +55,4 @@ python -m pytest tests/ -v
 ## Approach
 
 Everything here is built from scratch for learning — I believe understanding comes from implementing. These are paper reproductions and learning projects, not production systems.
+
